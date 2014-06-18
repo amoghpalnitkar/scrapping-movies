@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 from urllib2 import urlopen
-import re
+import re,sys
 
 BASE_URL = "http://www.imdb.com"
 movie_rating = 0
@@ -50,7 +50,9 @@ def get_category_links(movie):
 def format_movie():
     movie.replace(" ","-")
     return
-movie = raw_input("Enter movie name : ")
+
+movie=' '.join(sys.argv[1:])
+#print movie
 #format_movie()
 #movieCapital = capitalize(movie)
 movie = movie.replace(" ","-")
